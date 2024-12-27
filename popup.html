@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OstadSanj</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>OstadSanj</h1>
-    <form id="feedbackForm">
-      <label for="professorName">Professor Name:</label>
-      <input type="text" id="professorName" name="professorName" required />
-
-      <label for="rating">Rating (1-5):</label>
-      <input type="number" id="rating" name="rating" min="1" max="5" required />
-
-      <label for="comments">Comments:</label>
-      <textarea id="comments" name="comments" rows="4"></textarea>
-
-      <button type="submit">Submit</button>
-    </form>
+    <h1>استاد سنج</h1>
+    <div class="container">
+      <button data-value="خیلی خوب" id="test1">خیلی خوب</button>
+      <button data-value="خوب" id="test2">خوب</button>
+      <button data-value="متوسط" id="test3">متوسط</button>
+      <button data-value="ضعیف" id="test4">ضعیف</button>
+    </div>
     <script src="popup.js"></script>
   </body>
 </html>

@@ -1,11 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "OstadSanj",
+  "name": "Input Finder",
   "version": "1.0",
-  "description": "An extension for evaluating professors and gathering feedback.",
+  "description": "Find and log input fields on a user's page",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icon.png"
-  },
-  "permissions": ["storage"]
+    "default_icon": "image.png"
+  }
 }

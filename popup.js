@@ -1,16 +1,21 @@
-document.getElementById("feedbackForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-  
-    const professorName = document.getElementById("professorName").value;
-    const rating = document.getElementById("rating").value;
-    const comments = document.getElementById("comments").value;
-  
-    // ذخیره داده‌ها در storage مرورگر
-    chrome.storage.sync.set({ [professorName]: { rating, comments } }, function () {
-      alert("Feedback submitted successfully!");
+document.querySelectorAll('button[data-value]').forEach(button => {
+    button.addEventListener('click', () => {
+      const titleValue = button.getAttribute('data-value');
+      chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+        chrome.scripting.executeScript({
+          target: { tabId: tabs[0].id },
+          func: activateRadiosByTitle,
+          args: [titleValue]
+        });
+      });
     });
-  
-    // پاک کردن فرم
-    event.target.reset();
   });
+  
+  function activateRadiosByTitle(titleValue) {
+    document.querySelectorAll('input[type="radio"]').forEach(input => {
+      if (input.title === titleValue) {
+        input.click()
+      }
+    });
+  }
   
